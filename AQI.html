@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+ <head>
+ 	<title></title>
+ 	<style type="text/css">
+ 		*{
+ 			margin:0;
+ 			padding:0; 
+ 		}
+ 		a:link, a:visited {
+         	background-color: #A9A9A9;
+         	color: white;
+         	padding: 10px 15px;
+         	margin:auto;
+         	text-align: center;
+         	text-decoration: none;
+         	display: inline-block;
+        }
+        a:hover, a:active {
+        	margin:auto;
+          	background-color: powderblue;
+        }
+ 		.regform{
+ 			width: 800px;
+ 			background-color: rgb(0,0,0,0.6);
+ 			margin:auto;
+ 			color: #FFFFFF;
+ 			padding: 10px 0px 10px 0px;
+ 			text-align: center;
+ 			border-radius: 15px 15px 0px 0px; 
+ 		}
+ 		.main{
+ 			background-color: rgb(0,0,0,0.5);
+ 			width: 800px;
+ 			margin:auto ;
+ 		}
+ 		form{
+ 			padding: 10px;
+ 		}
+ 		.name{
+ 			margin-left: 25px;
+ 			margin-top: 30px;
+ 			width:125px;
+ 			color:white;
+ 			font-size: 18px;
+ 			font-weight: 700; 
+ 		}
+ 		.amount{
+ 			position: relative;
+ 			left: 200px;
+ 			top: -37px;
+ 			line-height: 40px;
+ 			border-radius: 6px;
+ 			padding: 0 22px;
+ 			font-size: 16px;
+ 		}
+ 		.option{
+ 			position: relative;
+ 			left: 200px;
+ 			top: -37px;
+ 			line-height: 40px;
+ 			width: 532px;
+ 			height: 40px;
+ 			border-radius: 6px;
+ 			padding: 0 22px;
+ 			font-size: 16px;
+ 			color: black;
+ 			outline:none;
+ 			overflow: hidden;
+ 		}
+ 		.option option{
+ 			font-size: 20px;
+ 		}
+ 		button{
+ 			background-color: #3BAF9F;
+ 			display: block;
+ 			margin: 20px 0px 0px 20px;
+ 			text-align: center;
+ 			border-radius: 12px;
+ 			border: 2px solid #366473;
+ 			padding: 14px 110px;
+ 			outline: none;
+ 			color: white;
+ 			cursor:pointer;
+ 			transition: 0.25px;
+ 		}
+ 		button:hover{
+ 			background-color:#5390F5;
+ 		}
+ 	</style>
+ </head> 
+ <body>
+ 	<div class= "regform"><h1> AQI Predictor</h1></div>
+ 	<br><h3 style="color: black;" align="center"><b></b>{{pred}}</b>
+ 	</h3>
+ 	<br>
+ 	<div class="main">
+ 		<form action="/" method="POST" class="col s12" >
+ 			<div id="name">
+ 				<h2 class="name">PM2.5</h2>
+ 			 	<input class="amount" type="text" name="pm2" value="0.19874368"><br>
+ 			<div id="name">
+ 				<h2 class="name">PM10</h2>
+ 			 	<input class="amount" type="text" name="pm10" value="0.0"><br>
+ 			<div id="name">
+ 				<h2 class="name">NO</h2>
+ 			 	<input class="amount" type="text" name="no" value="-0.16958197"><br>
+ 			<div id="name">
+ 				<h2 class="name">NO2</h2>
+ 			 	<input class="amount" type="text" name="no2" value="-0.01221309"><br>
+ 			<div id="name">
+ 				<h2 class="name">NOx</h2>
+ 			 	<input class="amount" type="text" name="nox" value="0.29757216"><br>
+ 			<div id="name">
+ 				<h2 class="name">NH3</h2>
+ 			 	<input class="amount" type="text" name="nh3" value="0.0"><br>
+ 			<div id="name">
+ 				<h2 class="name">CO</h2>
+ 			 	<input class="amount" type="text" name="co" value="1.64085426"><br>
+ 			<div id="name">
+ 				<h2 class="name">SO2</h2>
+ 			 	<input class="amount" type="text" name="so2" value="1.98241782"><br>
+ 			<div id="name">
+ 				<h2 class="name">O3</h2>
+ 			 	<input class="amount" type="text" name="o3" value="2.90883081"><br>
+ 			<div id="name">
+ 				<h2 class="name">Benzene</h2>
+ 			 	<input class="amount" type="text" name="benzene" value="-0.23019245"><br>
+ 			<div id="name">
+ 				<h2 class="name">Toluene</h2>
+ 			 	<input class="amount" type="text" name="toluene" value="-0.52139657"><br>
+ 			<div id="name">
+ 				<h2 class="name">Xylene</h2>
+ 			 	<input class="amount" type="text" name="xylene" value="0.29280211"><br>
+ 			<h2 class="name">SELECT MODEL</h2>
+ 			<select class="option" name="model">
+ 			<option disabled="disabled" selected="selected">--Choose option</option>
+ 			<option> Linear Regression</option>
+ 			<option> Support Vector Regression</option>
+ 			<option> Multi-Layer Perceptron</option>
+ 			<option> Random Forest Regressor</option>
+ 			<option> Decision Tree Regressor</option>
+ 				
+ 			</select><br>
+ 			<button type="submit">Predict</button>
+ 			<p class ="result"></p>
+ 		</form>
+ 	</div>
+ </body>
+</html> 
